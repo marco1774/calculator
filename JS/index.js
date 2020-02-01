@@ -1,5 +1,3 @@
-console.log("ok");
-
 let tasti = document.querySelectorAll(".btn");
 let numero = "0";
 let cacheNumber = "0";
@@ -10,6 +8,10 @@ let resultToDisplay = null;
 tasti.forEach(elem =>
   elem.addEventListener("click", event => {
     event.preventDefault();
+    document.getElementById("diviso").classList.remove("sign-select");
+    document.getElementById("per").classList.remove("sign-select");
+    document.getElementById("meno").classList.remove("sign-select");
+    document.getElementById("piu").classList.remove("sign-select");
     switch (event.target.innerHTML) {
       case "AC":
         numero = "0";
@@ -25,6 +27,7 @@ tasti.forEach(elem =>
         showResult(Number(numero));
         break;
       case "/":
+        document.getElementById("diviso").classList.add("sign-select");
         cacheNumber = numero;
         numero = "";
         operatorType = "/";
@@ -32,6 +35,7 @@ tasti.forEach(elem =>
         console.log("cache", cacheNumber);
         break;
       case "*":
+        document.getElementById("per").classList.add("sign-select");
         cacheNumber = numero;
         numero = "";
         operatorType = "*";
@@ -39,6 +43,7 @@ tasti.forEach(elem =>
         console.log("cache", cacheNumber);
         break;
       case "-":
+        document.getElementById("meno").classList.add("sign-select");
         cacheNumber = numero;
         numero = "";
         operatorType = "-";
@@ -46,6 +51,7 @@ tasti.forEach(elem =>
         console.log("cache", cacheNumber);
         break;
       case "+":
+        document.getElementById("piu").classList.add("sign-select");
         cacheNumber = numero;
         numero = "";
         operatorType = "+";
@@ -64,28 +70,36 @@ tasti.forEach(elem =>
     console.log("cache", cacheNumber);
     console.log("operatorType", operatorType);
     console.log("flagUguale", flagUguale);
+    console.log("resultToDisplay", resultToDisplay);
     console.log("----------------------------------");
     document.querySelector(".display-cache").innerHTML = Number(cacheNumber);
   })
 );
+
+function showResult(num) {
+  document.querySelector(".display").innerHTML = Number(num);
+}
 
 function uguale(operator) {
   console.log("funzione uguale");
   if (numero === "" || cacheNumber === "0") {
     return;
   }
+
   if (operator === "+") {
     resultToDisplay = (Number(numero) + Number(cacheNumber)).toFixed(9);
     flagUguale = true;
     cacheNumber = "0";
     operatorType = "";
+    numero = resultToDisplay;
     showResult(resultToDisplay);
   }
   if (operator === "-") {
-    numeresultToDisplayro = (Number(cacheNumber) - Number(numero)).toFixed(9);
+    resultToDisplay = (Number(cacheNumber) - Number(numero)).toFixed(9);
     flagUguale = true;
     cacheNumber = "0";
     operatorType = "";
+    numero = resultToDisplay;
     showResult(resultToDisplay);
   }
   if (operator === "*") {
@@ -93,6 +107,7 @@ function uguale(operator) {
     flagUguale = true;
     cacheNumber = "0";
     operatorType = "";
+    numero = resultToDisplay;
     showResult(resultToDisplay);
   }
   if (operator === "/") {
@@ -100,6 +115,7 @@ function uguale(operator) {
     flagUguale = true;
     cacheNumber = "0";
     operatorType = "";
+    numero = resultToDisplay;
     showResult(resultToDisplay);
   }
 }
