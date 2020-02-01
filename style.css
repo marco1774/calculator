@@ -1,0 +1,102 @@
+body,
+html {
+  border: 0px;
+  margin: 0;
+  background-color: aliceblue;
+}
+body {
+  height: 100vh;
+}
+
+.btn {
+  background-color: rgb(106, 106, 106);
+  font-size: 20px;
+}
+
+/* container */
+.container {
+  width: 250px;
+  margin: auto;
+  margin-top: 50px;
+  background-color: aliceblue;
+  -webkit-box-shadow: 10px 10px 28px 1px rgba(0, 0, 0, 0.61);
+  -moz-box-shadow: 10px 10px 28px 1px rgba(0, 0, 0, 0.61);
+  box-shadow: 10px 10px 28px 1px rgba(0, 0, 0, 0.61);
+}
+
+/* display */
+.container-display {
+  overflow: hidden;
+  line-height: 50px;
+  text-align: right;
+  color: aliceblue;
+  font-size: 40px;
+  width: 249px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 5px;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid black;
+  background-color: rgb(46, 46, 46);
+}
+
+/*Operator button*/
+.container-operator {
+  width: 250px;
+  height: 50px;
+  margin: auto;
+
+  background-color: rgb(145, 201, 244);
+}
+
+.operator {
+  width: 25%;
+  float: left;
+  height: 100%;
+  margin: 0px;
+  outline: 1px solid black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 27px;
+  background-color: chocolate;
+}
+
+/*Numbers button-1*/
+
+.container-number {
+  width: 250px;
+  height: 180px;
+  margin: auto;
+
+  background-color: rgb(145, 201, 244);
+}
+
+.container-number-1 {
+  width: 100%;
+  height: 45px;
+}
+
+.numbers {
+  float: right;
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  outline: 1px solid black;
+  text-align: center;
+  background-color: darkorange;
+  line-height: 180px;
+  font-size: 27px;
+}
+
+.numbers-1 {
+  float: left;
+  width: 25%;
+  float: left;
+  height: 100%;
+  margin: 0px;
+  outline: 1px solid black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 27px;
+  background-color: lightgray;
+}
